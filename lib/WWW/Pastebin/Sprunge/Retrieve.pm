@@ -3,7 +3,7 @@ use warnings;
 
 package WWW::Pastebin::Sprunge::Retrieve;
 BEGIN {
-  $WWW::Pastebin::Sprunge::Retrieve::VERSION = '0.003';
+  $WWW::Pastebin::Sprunge::Retrieve::VERSION = '0.004';
 }
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
 
@@ -143,7 +143,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

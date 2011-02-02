@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package WWW::Pastebin::Sprunge::Create;
 BEGIN {
-  $WWW::Pastebin::Sprunge::Create::VERSION = '0.003';
+  $WWW::Pastebin::Sprunge::Create::VERSION = '0.004';
 }
 # ABSTRACT: create new pastes on sprunge.us
 
@@ -134,7 +134,7 @@ WWW::Pastebin::Sprunge::Create - create new pastes on sprunge.us
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

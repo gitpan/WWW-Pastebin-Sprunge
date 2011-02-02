@@ -4,6 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+lib/WWW/Pastebin/Sprunge.pod
 lib/WWW/Pastebin/Sprunge/Create.pm
 lib/WWW/Pastebin/Sprunge/Retrieve.pm
 t/00-compile.t
