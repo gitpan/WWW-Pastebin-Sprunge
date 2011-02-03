@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     'URI' => '0',
     'overload' => '0'
   },
-  'VERSION' => '0.004',
+  'VERSION' => '0.005',
   'test' => {
     'TESTS' => 't/*.t'
   }
