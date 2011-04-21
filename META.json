@@ -1,0 +1,57 @@
+{
+   "abstract" : "create new pastes on sprunge.us",
+   "author" : [
+      "Mike Doherty <doherty@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110440",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "WWW-Pastebin-Sprunge",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : 0,
+            "Class::Data::Accessor" : 0,
+            "Encode" : 0,
+            "HTTP::Request::Common" : 0,
+            "LWP::UserAgent" : 0,
+            "URI" : 0,
+            "overload" : 0,
+            "perl" : "5.008"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::More" : 0,
+            "utf8" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/doherty/WWW-Pastebin-Sprunge/issues"
+      },
+      "homepage" : "http://p3rl.org/WWW::Pastebin::Sprunge",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/doherty/WWW-Pastebin-Sprunge.git",
+         "web" : "https://github.com/doherty/WWW-Pastebin-Sprunge"
+      }
+   },
+   "version" : "0.006"
+}
+

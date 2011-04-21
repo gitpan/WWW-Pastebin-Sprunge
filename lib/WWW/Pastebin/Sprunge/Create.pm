@@ -1,29 +1,26 @@
+package WWW::Pastebin::Sprunge::Create;
 use strict;
 use warnings;
-package WWW::Pastebin::Sprunge::Create;
-BEGIN {
-  $WWW::Pastebin::Sprunge::Create::VERSION = '0.005';
-}
 # ABSTRACT: create new pastes on sprunge.us
-
+our $VERSION = '0.006'; # VERSION
 use Carp;
 use URI;
 use LWP::UserAgent;
 use HTTP::Request::Common;
 use Encode;
 use base 'Class::Data::Accessor';
-__PACKAGE__->mk_classaccessors qw(
+__PACKAGE__->mk_classaccessors(qw(
     ua
     paste_uri
     error
-);
+));
 
 use overload q|""| => sub { shift->paste_uri; };
 
 
 sub new {
     my $class = shift;
-    croak "Must have even number of arguments to new()"
+    croak 'Must have even number of arguments to new()'
         if @_ & 1;
 
     my %args = @_;
@@ -47,14 +44,14 @@ sub paste {
 
     $self->$_(undef) for qw(paste_uri error);
 
-    defined $text or carp "Undefined paste content" and return;
+    defined $text or carp 'Undefined paste content' and return;
 
-    croak "Must have even number of optional arguments to paste()"
+    croak 'Must have even number of optional arguments to paste()'
         if @_ & 1;
 
     my %args = @_;
     %args = (
-        sprunge     => $text,
+        sprunge => $text,
         %args,
     );
 
@@ -62,7 +59,7 @@ sub paste {
 
     $args{file}
         and not -e $args{sprunge}
-        and return $self->_set_error("File $args{'sprunge'} does not seem to exist");
+        and return $self->_set_error("File $args{sprunge} does not seem to exist");
 
     my $ua = $self->ua;
     $ua->requests_redirectable( [ ] );
@@ -122,8 +119,7 @@ sub _set_error {
 
 1;
 
-
-
+__END__
 =pod
 
 =encoding utf-8
@@ -134,7 +130,7 @@ WWW::Pastebin::Sprunge::Create - create new pastes on sprunge.us
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -285,6 +281,8 @@ to C<paste()>.
 
 =head1 AVAILABILITY
 
+The project homepage is L<http://p3rl.org/WWW::Pastebin::Sprunge>.
+
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/WWW-Pastebin-Sprunge/>.
@@ -294,12 +292,17 @@ and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
 
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/doherty/WWW-Pastebin-Sprunge>
+and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
+L<https://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
 
 =head1 AUTHOR
 
@@ -314,5 +317,3 @@ the same terms as the Perl 5 programming language system itself.
 
 =cut
 
-
-__END__

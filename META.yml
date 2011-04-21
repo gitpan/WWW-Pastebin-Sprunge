@@ -10,7 +10,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200001, CPAN::Meta::Converter version 2.110240'
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110440'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -26,6 +26,7 @@ requires:
   overload: 0
   perl: 5.008
 resources:
-  bugtracker: http://github.com/doherty/WWW-Pastebin-Sprunge/issues
+  bugtracker: https://github.com/doherty/WWW-Pastebin-Sprunge/issues
+  homepage: http://p3rl.org/WWW::Pastebin::Sprunge
   repository: git://github.com/doherty/WWW-Pastebin-Sprunge.git
-version: 0.005
+version: 0.006

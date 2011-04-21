@@ -1,18 +1,13 @@
+package WWW::Pastebin::Sprunge::Retrieve;
 use strict;
 use warnings;
-
-package WWW::Pastebin::Sprunge::Retrieve;
-BEGIN {
-  $WWW::Pastebin::Sprunge::Retrieve::VERSION = '0.005';
-}
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
-
+our $VERSION = '0.006'; # VERSION
 use URI;
 use Carp;
 use LWP::UserAgent;
 use Encode;
 use base 'Class::Data::Accessor';
-
 __PACKAGE__->mk_classaccessors(qw(
     ua
     uri
@@ -131,8 +126,7 @@ sub content {
 
 1;
 
-
-
+__END__
 =pod
 
 =encoding utf-8
@@ -143,7 +137,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -258,6 +252,8 @@ object in a string to get the contents of the paste.
 
 =head1 AVAILABILITY
 
+The project homepage is L<http://p3rl.org/WWW::Pastebin::Sprunge>.
+
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
 site near you, or see L<http://search.cpan.org/dist/WWW-Pastebin-Sprunge/>.
@@ -267,12 +263,17 @@ and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>.
 Instead of sending patches, please fork this project using the standard
 git and github infrastructure.
 
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/doherty/WWW-Pastebin-Sprunge>
+and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
+L<https://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
 
 =head1 AUTHOR
 
@@ -287,5 +288,3 @@ the same terms as the Perl 5 programming language system itself.
 
 =cut
 
-
-__END__
