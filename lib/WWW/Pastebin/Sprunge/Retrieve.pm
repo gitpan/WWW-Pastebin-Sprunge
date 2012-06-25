@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Retrieve;
 use strict;
 use warnings;
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
-our $VERSION = '0.006'; # VERSION
+our $VERSION = '0.007'; # VERSION
 use URI;
 use Carp;
 use LWP::UserAgent;
@@ -137,7 +137,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
@@ -256,12 +256,7 @@ The project homepage is L<http://p3rl.org/WWW::Pastebin::Sprunge>.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<http://search.cpan.org/dist/WWW-Pastebin-Sprunge/>.
-
-The development version lives at L<http://github.com/doherty/WWW-Pastebin-Sprunge>
-and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>.
-Instead of sending patches, please fork this project using the standard
-git and github infrastructure.
+site near you, or see L<https://metacpan.org/module/WWW::Pastebin::Sprunge/>.
 
 =head1 SOURCE
 
@@ -270,10 +265,8 @@ and may be cloned from L<git://github.com/doherty/WWW-Pastebin-Sprunge.git>
 
 =head1 BUGS AND LIMITATIONS
 
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<https://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
+You can make new bug reports, and view existing ones, through the
+web interface at L<https://github.com/doherty/WWW-Pastebin-Sprunge/issues>.
 
 =head1 AUTHOR
 

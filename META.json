@@ -4,7 +4,7 @@
       "Mike Doherty <doherty@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110440",
+   "generated_by" : "Dist::Zilla version 4.300018, CPAN::Meta::Converter version 2.120630",
    "license" : [
       "perl_5"
    ],
@@ -13,30 +13,45 @@
       "version" : "2"
    },
    "name" : "WWW-Pastebin-Sprunge",
+   "no_index" : {
+      "directory" : [
+         "corpus",
+         "inc",
+         "examples"
+      ]
+   },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "Module::Build" : "0.3601"
          }
       },
       "runtime" : {
          "requires" : {
-            "Carp" : 0,
-            "Class::Data::Accessor" : 0,
-            "Encode" : 0,
-            "HTTP::Request::Common" : 0,
-            "LWP::UserAgent" : 0,
-            "URI" : 0,
-            "overload" : 0,
-            "perl" : "5.008"
+            "Carp" : "0",
+            "Class::Data::Accessor" : "0",
+            "Encode" : "0",
+            "HTTP::Request::Common" : "0",
+            "LWP::UserAgent" : "0",
+            "URI" : "0",
+            "base" : "0",
+            "overload" : "0",
+            "perl" : "5.008",
+            "strict" : "0",
+            "warnings" : "0"
          }
       },
       "test" : {
          "requires" : {
-            "File::Find" : 0,
-            "File::Temp" : 0,
-            "Test::More" : 0,
-            "utf8" : 0
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0",
+            "utf8" : "0"
          }
       }
    },
@@ -52,6 +67,6 @@
          "web" : "https://github.com/doherty/WWW-Pastebin-Sprunge"
       }
    },
-   "version" : "0.006"
+   "version" : "0.007"
 }
 
