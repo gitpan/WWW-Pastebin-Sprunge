@@ -2,11 +2,13 @@ Build.PL
 Changes
 LICENSE
 MANIFEST
+MANIFEST.SKIP
 META.json
 META.yml
 Makefile.PL
 README
 README.mkdn
+dist.ini
 lib/WWW/Pastebin/Sprunge.pod
 lib/WWW/Pastebin/Sprunge/Create.pm
 lib/WWW/Pastebin/Sprunge/Retrieve.pm

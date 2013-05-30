@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Create;
 use strict;
 use warnings;
 # ABSTRACT: create new pastes on sprunge.us
-our $VERSION = '0.007'; # VERSION
+our $VERSION = '0.008'; # VERSION
 use Carp;
 use URI;
 use LWP::UserAgent;
@@ -63,15 +63,22 @@ sub paste {
 
     my $ua = $self->ua;
     $ua->requests_redirectable( [ ] );
-    my @post_request = $self->_make_request_args( \%args );
-    # use Data::Dumper;
-    # print Dumper \@post_request and die;
-    my $response = $self->ua->post( @post_request );
-    # print Dumper $response and die;
+
+    my @post_request = (
+        'http://sprunge.us',
+        Content_Type => 'form-data',
+        Content => [
+            $args{file}
+                ? (sprunge => [ $args{sprunge}, '' ])
+                : (sprunge => encode_utf8($args{sprunge}))
+        ],
+    );
+    my $response = do {
+        local $HTTP::Request::Common::DYNAMIC_FILE_UPLOAD = 1;
+        $self->ua->post( @post_request );
+    };
     if ( $response->is_success() ) {
         my $uri = URI->new($response->{_content});
-        # use Data::Dumper;
-        # die Dumper $response;
         return $self->_set_error(q{Request was successful but I don't see a link to the paste }
                 . $response->code
                 . $response->content
@@ -82,25 +89,6 @@ sub paste {
     else {
         return $self->_set_error($response, 'net');
     }
-}
-
-sub _make_request_args {
-    my $self = shift;
-    my $args = shift;
-
-    if ($args->{file}) {
-        open my $fh, '<', $args->{sprunge} or die "Can't open for reading: $!";
-        $args->{sprunge} = do { local $/; <$fh> };
-    }
-    else {
-        $args->{sprunge} = encode_utf8($args->{sprunge});
-    }
-
-    return (
-        'http://sprunge.us',
-        Content_Type => 'form-data',
-        Content => [ %{ $args } ],
-    );
 }
 
 
@@ -120,6 +108,7 @@ sub _set_error {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -130,7 +119,7 @@ WWW::Pastebin::Sprunge::Create - create new pastes on sprunge.us
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -281,7 +270,7 @@ to C<paste()>.
 
 =head1 AVAILABILITY
 
-The project homepage is L<http://p3rl.org/WWW::Pastebin::Sprunge>.
+The project homepage is L<http://metacpan.org/release/WWW-Pastebin-Sprunge/>.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
@@ -309,4 +298,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

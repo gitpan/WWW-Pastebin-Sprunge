@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Retrieve;
 use strict;
 use warnings;
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
-our $VERSION = '0.007'; # VERSION
+our $VERSION = '0.008'; # VERSION
 use URI;
 use Carp;
 use LWP::UserAgent;
@@ -127,6 +127,7 @@ sub content {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -137,7 +138,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -252,7 +253,7 @@ object in a string to get the contents of the paste.
 
 =head1 AVAILABILITY
 
-The project homepage is L<http://p3rl.org/WWW::Pastebin::Sprunge>.
+The project homepage is L<http://metacpan.org/release/WWW-Pastebin-Sprunge/>.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
@@ -280,4 +281,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
