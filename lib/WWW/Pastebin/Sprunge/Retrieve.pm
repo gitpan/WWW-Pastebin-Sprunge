@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Retrieve;
 use strict;
 use warnings;
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
-our $VERSION = '0.008'; # VERSION
+our $VERSION = '0.009'; # VERSION
 use URI;
 use Carp;
 use LWP::UserAgent;
@@ -138,7 +138,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
