@@ -6,7 +6,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ WWW::Pastebin::Sprunge - access the http://sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 

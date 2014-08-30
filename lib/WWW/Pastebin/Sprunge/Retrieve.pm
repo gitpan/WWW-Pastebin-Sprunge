@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Retrieve;
 use strict;
 use warnings;
 # ABSTRACT: retrieves pastes from the sprunge.us pastebin
-our $VERSION = '0.009'; # VERSION
+our $VERSION = '0.010'; # VERSION
 use URI;
 use Carp;
 use LWP::UserAgent;
@@ -107,7 +107,7 @@ sub _parse {
     if (!defined($content) or !length($content)) {
         return $self->_set_error('Nothing to parse (empty document retrieved)');
     }
-    elsif ($content eq "$id not found") {
+    elsif ($content =~ m{\A$id not found.\Z}) {
         return $self->_set_error('No such paste');
     }
     else {
@@ -130,7 +130,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -138,7 +138,7 @@ WWW::Pastebin::Sprunge::Retrieve - retrieves pastes from the sprunge.us pastebin
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 

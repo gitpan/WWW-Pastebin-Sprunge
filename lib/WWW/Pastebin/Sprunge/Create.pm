@@ -2,7 +2,7 @@ package WWW::Pastebin::Sprunge::Create;
 use strict;
 use warnings;
 # ABSTRACT: create new pastes on sprunge.us
-our $VERSION = '0.009'; # VERSION
+our $VERSION = '0.010'; # VERSION
 use Carp;
 use URI;
 use LWP::UserAgent;
@@ -111,7 +111,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -119,7 +119,7 @@ WWW::Pastebin::Sprunge::Create - create new pastes on sprunge.us
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
